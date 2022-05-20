@@ -178,7 +178,7 @@ function Kavo.CreateLib(kavName, themeList)
     elseif themeList == "Serpent" then
         themeList = themeStyles.Serpent
     elseif themeList == "Fang" then
-        themeLisy = themeStyles.Fang
+        themeList = themeStyles.Fang
     else
         if themeList.SchemeColor == nil then
             themeList.SchemeColor = Color3.fromRGB(74, 99, 135)
