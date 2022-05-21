@@ -64,11 +64,11 @@ local themeStyles = {
         ElementColor = Color3.fromRGB(20, 20, 20)
     },
     Fang = {
-       SchemeColor = Color3.fromRGB(196, 194, 202),
-       Background= Color3.fromRGB(5, 5, 155),
+       SchemeColor = Color3.fromRGB(44, 65, 135),
+       Background= Color3.fromRGB(29, 29, 122),
        Header = Color3.fromRGB(17, 17, 77),
        TextColor = Color3.fromRGB(0, 0, 0),
-       ElementColor = Color3.fromRGB(102, 0, 0)
+       ElementColor = Color3.fromRGB(0, 30, 112)
     },
     Light = {
         SchemeColor = Color3.fromRGB(150, 150, 150),
