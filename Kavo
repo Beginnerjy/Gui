@@ -1217,7 +1217,7 @@ function Element:Notification(titletext, desctext, btntext)
 			wait()
 			NotificationHolderMain:Destroy()
 		end)
-
+           end
 function Elements:Toggle(tname, nTip, callback)
                     local TogFunction = {}
                     tname = tname or "Toggle"
