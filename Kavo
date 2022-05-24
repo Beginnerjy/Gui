@@ -310,7 +310,7 @@ local ScreenGui = Instance.new("ScreenGui")
     coverup.Size = UDim2.new(0, 525, 0, 7)
     
     Userpad.Name = "Userpad"
-	Userpad.Parent = Main
+	Userpad.Parent = MainHeader
 	Userpad.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Userpad.BackgroundTransparency = 1
 	Userpad.BorderSizePixel = 0
