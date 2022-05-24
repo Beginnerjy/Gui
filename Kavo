@@ -5,8 +5,7 @@ local tweeninfo = TweenInfo.new
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
-local HttpService = game:GetService("HttpService")
-local Mouse = LocalPlayer:GetMouse()
+local HttpService = game:GetService("HttpService"
 local pfp 
 local user 
 local tag 
