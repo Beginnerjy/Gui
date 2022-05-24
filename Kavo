@@ -1096,7 +1096,7 @@ table.insert(modules, bname)
                 end)()
             end 
 
-function Element:Notification(titletext, desctext, btntext)
+function Kavo:Notification(titletext, desctext, btntext)
 		local NotificationHolderMain = Instance.new("Frame")
 		local NotificationHolderMainCorner = Instance.new("UICorner")
 		local Notification = Instance.new("Frame")
@@ -1116,9 +1116,9 @@ function Element:Notification(titletext, desctext, btntext)
 		NotificationHolderMain.BorderSizePixel = 0
 		NotificationHolderMain.Position = UDim2.new(0, -1, 0.0460000017, 0)
 		NotificationHolderMain.Size = UDim2.new(0, 676, 0, 374)
-		tween:Create(
+		TweenService:Create(
 			NotificationHolderMain,
-			tweeninfo.new(.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
+			TweenInfo.new(.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
 			{BackgroundTransparency = 0.1}
 		):Play()
 
@@ -1137,9 +1137,9 @@ function Element:Notification(titletext, desctext, btntext)
 
 		Notification:tweenSize(UDim2.new(0, 346, 0, 176), Enum.EasingDirection.Out, Enum.EasingStyle.Back, .2, true)
 
-		tween:Create(
+		TweenService:Create(
 			Notification,
-			tweeninfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+			TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 			{BackgroundTransparency = 0}
 		):Play()
 
@@ -1203,15 +1203,15 @@ function Element:Notification(titletext, desctext, btntext)
 		AlrightCorner.Parent = AlrightBtn
 
 		AlrightBtn.MouseButton1Click:Connect(function()
-			tween:Create(
+			TweenService:Create(
 				NotificationHolderMain,
-				tweeninfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+				TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 				{BackgroundTransparency = 1}
 			):Play()
 			Notification:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .2, true)
-			tween:Create(
+			TweenService:Create(
 				Notification,
-				tweeninfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+				TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 				{BackgroundTransparency = 1}
 			):Play()
 			wait()
