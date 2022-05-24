@@ -1585,6 +1585,7 @@ local Value
                 end)        
             end
 
+
             function Elements:NewDropdown(dropname, dropinf, list, callback)
                 local DropFunction = {}
                 dropname = dropname or "Dropdown"
@@ -2245,6 +2246,30 @@ UICorner1.CornerRadius = UDim.new(0, 4)
                     end
                 end)()
             end
+
+function ChannelContent:AddImage(image)
+				local imagePlayer = "www.roblox.com/avatar-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
+				local gamepng = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432&format=png"
+				local img = gamepng or image
+				local ImageFrame = Instance.new("Frame")
+				local gameImageOutline = Instance.new("Frame")
+				local gameImage = Instance.new("ImageLabel")
+
+				ImageFrame.Name = "ImageFrame"
+				ImageFrame.Parent = ChannelHolder
+				ImageFrame.Position = UDim2.new(0.261979163, 0, 0.190789461, 0)
+				ImageFrame.Size = UDim2.new(0, 401, 0, 105)
+				ImageFrame.BackgroundTransparency = 1.000
+
+				gameImage.Name = "gameImageOutline"
+				gameImage.Parent = ImageFrame
+				gameImage.Size = UDim2.new(0, 401 * 2/4, 0, 125 * 3/4)
+				gameImage.Position = UDim2.new(0.125, 0, 0, 0)
+				gameImage.BackgroundTransparency = 1.000
+				gameImage.Image = img
+
+				ChannelHolder.CanvasSize = UDim2.new(0, 0, 0, ChannelHolderLayout.AbsoluteContentSize.Y)
+			end
 
             function Elements:NewColorPicker(colText, colInf, defcolor, callback)
                 colText = colText or "ColorPicker"
