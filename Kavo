@@ -363,7 +363,7 @@ local ScreenGui = Instance.new("ScreenGui")
 	UserTag.Size = UDim2.new(0, 95, 0, 17)
 	UserTag.Font = Enum.Font.Gotham
 	
-	UserTag.TextColor3 = PresetColor
+	UserTag.TextColor3 = Color3.fromRGB(0, 0, 0)
 	UserTag.TextSize = 13.000
 	UserTag.TextTransparency = 0.300
 	UserTag.TextXAlignment = Enum.TextXAlignment.Left
