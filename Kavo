@@ -495,7 +495,7 @@ MainSide.Name = "MainSide"
 
     local first = true
 
-    function Tabs:Tab(tabName)
+    function Tabs:NewTab(tabName)
         tabName = tabName or "Tab"
         local tabButton = Instance.new("TextButton")
         local UICorner = Instance.new("UICorner")
@@ -595,7 +595,7 @@ MainSide.Name = "MainSide"
             end
         end)()
     
-        function Sections:Section(secName, hidden)
+        function Sections:NewSection(secName, hidden)
             secName = secName or "Section"
             local sectionFunctions = {}
             local modules = {}
@@ -2906,7 +2906,8 @@ toggleDisabled.Name = "toggleDisabled"
                 	if label.Text ~= "  "..newText then
                 		label.Text = "  "..newText
                 	end
-                end	
+                end
+end	
                 return labelFunctions
             end	
             return Elements
@@ -2916,4 +2917,3 @@ toggleDisabled.Name = "toggleDisabled"
     return Tabs
 end
 return Kavo
-end
