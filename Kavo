@@ -6,9 +6,14 @@ local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local HttpService = game:GetService("HttpService")
-local pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=" .. game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png"
-local user = userinfo["user"] or game.Players.LocalPlayer.DisplayName
-local tag = userinfo["tag"] or tostring(math.random(0001, 9999))
+local pfp 
+local user 
+local tag 
+local userinfo = {}
+
+pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=" .. game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png"
+user = userinfo["user"] or game.Players.LocalPlayer.DisplayName
+tag = userinfo["tag"] or tostring(math.random(0001, 9999))
 
 local function SaveInfo()
 	userinfo["pfp"] = pfp
@@ -16,7 +21,13 @@ local function SaveInfo()
 	userinfo["tag"] = tag
 	writefile("", HttpService:JSONEncode(userinfo))
 end
-local userinfo = {}
+
+local function SaveInfo()
+	userinfo["pfp"] = pfp
+	userinfo["user"] = user
+	userinfo["tag"] = tag
+	writefile("", HttpService:JSONEncode(userinfo))
+end
 
 
 local function SaveInfo()
