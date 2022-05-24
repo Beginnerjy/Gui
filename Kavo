@@ -495,7 +495,7 @@ MainSide.Name = "MainSide"
 
     local first = true
 
-    function Tabs:NewTab(tabName)
+    function Tabs:Tab(tabName)
         tabName = tabName or "Tab"
         local tabButton = Instance.new("TextButton")
         local UICorner = Instance.new("UICorner")
@@ -595,7 +595,7 @@ MainSide.Name = "MainSide"
             end
         end)()
     
-        function Sections:NewSection(secName, hidden)
+        function Sections:Section(secName, hidden)
             secName = secName or "Section"
             local sectionFunctions = {}
             local modules = {}
