@@ -2915,5 +2915,5 @@ toggleDisabled.Name = "toggleDisabled"
     end  
     return Tabs
 end
-end
 return Kavo
+end
