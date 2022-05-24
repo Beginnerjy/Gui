@@ -1217,7 +1217,7 @@ function Element:Notification(titletext, desctext, btntext)
 			wait()
 			NotificationHolderMain:Destroy()
 		end)
-           end
+   
 function Elements:Toggle(tname, nTip, callback)
                     local TogFunction = {}
                     tname = tname or "Toggle"
@@ -2914,5 +2914,6 @@ toggleDisabled.Name = "toggleDisabled"
         return Sections
     end  
     return Tabs
+end
 end
 return Kavo
