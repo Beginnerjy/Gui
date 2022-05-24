@@ -1,6 +1,5 @@
 local Kavo = {}
 
-local UserInputService = game:GetService("UserInputService")
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
 local input = game:GetService("UserInputService")
