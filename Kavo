@@ -377,7 +377,7 @@ local ScreenGui = Instance.new("ScreenGui")
 	end
 	end)
 
-function SomeLib:Notification(titletext, desctext, btntext)
+function Kavo:Notification(titletext, desctext, btntext)
 		local NotificationHolderMain = Instance.new("Frame")
 		local NotificationHolderMainCorner = Instance.new("UICorner")
 		local Notification = Instance.new("Frame")
