@@ -1,11 +1,13 @@
 local Kavo = {}
 
+local UserInputService = game:GetService("UserInputService")
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local HttpService = game:GetService("HttpService")
+local Mouse = LocalPlayer:GetMouse()
 local pfp 
 local user 
 local tag 
