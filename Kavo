@@ -6,7 +6,6 @@ local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local HttpService = game:GetService("HttpService")
-local ServersHolder = Instance.new("Folder")
 local pfp 
 local user 
 local tag 
@@ -237,6 +236,7 @@ local ScreenGui = Instance.new("ScreenGui")
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
+    local ServersHolder = Instance.new("Folder")
     local Userpad = Instance.new("Frame")
     local UserpadCorner = Instance.new("UICorner")
     local UserIcon = Instance.new("Frame")
