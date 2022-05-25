@@ -255,6 +255,11 @@ local ScreenGui = Instance.new("ScreenGui")
     local UserName = Instance.new("TextLabel")
     local UserTag = Instance.new("TextLabel")
     local sideCorner = Instance.new("UICorner")
+    local ServersHoldFrame = Instance.new("Frame")
+    local ServersHold = Instance.new("ScrollingFrame")
+    local ServersHoldLayout = Instance.new("UIListLayout")
+    local ServersHoldPadding = Instance.new("UIPadding")
+    local TopFrame = Instance.new("Frame")
     local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
@@ -308,7 +313,23 @@ local ScreenGui = Instance.new("ScreenGui")
     coverup.BorderSizePixel = 0
     coverup.Position = UDim2.new(0, 0, 0.758620679, 0)
     coverup.Size = UDim2.new(0, 525, 0, 7)
-    
+
+        TopFrame.Name = "TopFrame"
+	TopFrame.Parent = MainHeader
+	TopFrame.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
+	TopFrame.BackgroundTransparency = 1.000
+	TopFrame.BorderSizePixel = 0
+	TopFrame.Position = UDim2.new(-0.000658480625, 0, 0, 0)
+	TopFrame.Size = UDim2.new(0, 681, 0, 65)
+
+	TopFrameHolder.Name = "TopFrameHolder"
+	TopFrameHolder.Parent = TopFrame
+	TopFrameHolder.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
+	TopFrameHolder.BackgroundTransparency = 1.000
+	TopFrameHolder.BorderSizePixel = 0
+	TopFrameHolder.Position = UDim2.new(-0.000658480625, 0, 0, 0)
+	TopFrameHolder.Size = UDim2.new(0, 681, 0, 22)
+
     Userpad.Name = "Userpad"
 	Userpad.Parent = MainSide
 	Userpad.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -378,7 +399,32 @@ wait()
 	end
 	end)
 
+        ServersHoldFrame.Name = "ServersHoldFrame"
+	ServersHoldFrame.Parent = MainHeader
+	ServersHoldFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ServersHoldFrame.BackgroundTransparency = 1.000
+	ServersHoldFrame.BorderColor3 = PresetColor
+	ServersHoldFrame.Size = UDim2.new(0, 71, 0, 396)
 
+	ServersHold.Name = "ServersHold"
+	ServersHold.Parent = ServersHoldFrame
+	ServersHold.Active = true
+	ServersHold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ServersHold.BackgroundTransparency = 1.000
+	ServersHold.BorderSizePixel = 0
+	ServersHold.Position = UDim2.new(-0.000359333731, 0, 0.0580808073, 0)
+	ServersHold.Size = UDim2.new(0, 71, 0, 373)
+	ServersHold.ScrollBarThickness = 1
+	ServersHold.ScrollBarImageTransparency = 1
+	ServersHold.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+	ServersHoldLayout.Name = "ServersHoldLayout"
+	ServersHoldLayout.Parent = ServersHold
+	ServersHoldLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	ServersHoldLayout.Padding = UDim.new(0, 7)
+
+	ServersHoldPadding.Name = "ServersHoldPadding"
+	ServersHoldPadding.Parent = ServersHold
 
 
     title.Name = "title"
