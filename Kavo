@@ -260,6 +260,7 @@ local ScreenGui = Instance.new("ScreenGui")
     local ServersHoldLayout = Instance.new("UIListLayout")
     local ServersHoldPadding = Instance.new("UIPadding")
     local TopFrame = Instance.new("Frame")
+    local TopFrameHolder = Instance.new("Frame")
     local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
@@ -330,7 +331,10 @@ local ScreenGui = Instance.new("ScreenGui")
 	TopFrameHolder.Position = UDim2.new(-0.000658480625, 0, 0, 0)
 	TopFrameHolder.Size = UDim2.new(0, 681, 0, 22)
 
-    Userpad.Name = "Userpad"
+        ServersHolder.Name = "ServersHolder"
+	ServersHolder.Parent = TopFrameHolder
+
+        Userpad.Name = "Userpad"
 	Userpad.Parent = TopFrameHolder
 	Userpad.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Userpad.BackgroundTransparency = 1
@@ -400,7 +404,7 @@ wait()
 	end)
 
         ServersHoldFrame.Name = "ServersHoldFrame"
-	ServersHoldFrame.Parent = Top
+	ServersHoldFrame.Parent =  MainHeader
 	ServersHoldFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ServersHoldFrame.BackgroundTransparency = 1.000
 	ServersHoldFrame.BorderColor3 = PresetColor
