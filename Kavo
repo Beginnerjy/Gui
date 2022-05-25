@@ -317,7 +317,7 @@ local ScreenGui = Instance.new("ScreenGui")
     coverup.Size = UDim2.new(0, 525, 0, 7)
 
         TopFrame.Name = "TopFrame"
-	TopFrame.Parent = MainHeader
+	TopFrame.Parent = Main
 	TopFrame.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
 	TopFrame.BackgroundTransparency = 1.000
 	TopFrame.BorderSizePixel = 0
@@ -405,7 +405,7 @@ wait()
 	end)
 
         ServersHoldFrame.Name = "ServersHoldFrame"
-	ServersHoldFrame.Parent =  MainHeader
+	ServersHoldFrame.Parent =  Main
 	ServersHoldFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ServersHoldFrame.BackgroundTransparency = 1.000
 	ServersHoldFrame.BorderColor3 =  Color3.fromRGB(255, 255, 255)
