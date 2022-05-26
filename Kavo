@@ -6,26 +6,6 @@ local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local HttpService = game:GetService("HttpService")
-local pfp 
-local user 
-local tag 
-local userinfo = {}
-
-pcall(function()
-	userinfo = HttpService:JSONDecode(readfile("kavoinfo.txt"));
-end)
-
-pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
-user =  userinfo["user"] or game.Players.LocalPlayer.Name
-tag = userinfo["tag"] or tostring(math.random(1000,9999))
-
-local function SaveInfo()
-	userinfo["pfp"] = pfp
-	userinfo["user"] = user
-	userinfo["tag"] = tag
-	writefile("kavoinfo.txt", HttpService:JSONEncode(userinfo));
-end
-
 
 local Utility = {}
 local Objects = {}
@@ -236,21 +216,6 @@ local ScreenGui = Instance.new("ScreenGui")
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
-    local ServersHolder = Instance.new("Folder")
-    local Userpad = Instance.new("Frame")
-    local UserpadCorner = Instance.new("UICorner")
-    local UserIcon = Instance.new("Frame")
-    local UserIconCorner = Instance.new("UICorner")
-    local UserImage = Instance.new("ImageLabel")
-    local UserImageCorner = Instance.new("UICorner")
-    local UserCircleImage = Instance.new("ImageLabel")
-    local UserName = Instance.new("TextLabel")
-    local UserTag = Instance.new("TextLabel")
-    local sideCorner = Instance.new("UICorner")
-    local ServersHoldFrame = Instance.new("Frame")
-    local ServersHold = Instance.new("ScrollingFrame")
-    local ServersHoldLayout = Instance.new("UIListLayout")
-    local ServersHoldPadding = Instance.new("UIPadding")
     local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
@@ -307,104 +272,7 @@ local ScreenGui = Instance.new("ScreenGui")
 
         
 
-        ServersHolder.Name = "ServersHolder"
-	ServersHolder.Parent = MainHeader
-
-        Userpad.Name = "Userpad"
-	Userpad.Parent = MainHeader 
-	Userpad.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Userpad.BackgroundTransparency = 1
-	Userpad.BorderSizePixel = 0
-	Userpad.Position = UDim2.new(0.0010243297, 0, 15.8807148, 0)
-	Userpad.Size = UDim2.new(0, 179, 0, 43)
-
-	UserIcon.Name = "UserIcon"
-	UserIcon.Parent = Userpad
-	UserIcon.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-	UserIcon.BackgroundTransparency = 1
-	UserIcon.BorderSizePixel = 0
-	UserIcon.Position = UDim2.new(0.0340000018, 0, 0.123999998, 0)
-	UserIcon.Size = UDim2.new(0, 32, 0, 32)
-
-	UserImage.Name = "UserImage"
-	UserImage.Parent = UserIcon
-	UserImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	UserImage.BackgroundTransparency = 1.000
-	UserImage.Size = UDim2.new(0, 32, 0, 32)
-	UserImage.Image = pfp
-
-	UserCircleImage.Name = "UserImage"
-	UserCircleImage.Parent = UserImage
-	UserCircleImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	UserCircleImage.BackgroundTransparency = 1.000
-	UserCircleImage.ImageColor3 = Color3.fromRGB(23, 23, 23)
-	UserCircleImage.Size = UDim2.new(0, 32, 0, 32)
-	UserCircleImage.Image = "rbxassetid://4031889928"
-	UserCircleImage.ImageColor3 = Color3.fromRGB(27, 27, 27)
-
-	UserName.Name = "UserName"
-	UserName.Parent = Userpad
-	UserName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	UserName.BackgroundTransparency = 1.000
-	UserName.BorderSizePixel = 0
-	UserName.Position = UDim2.new(0.230000004, 0, 0.115999997, 0)
-	UserName.Size = UDim2.new(0, 98, 0, 17)
-	UserName.Font = Enum.Font.GothamSemibold
-	UserName.TextColor3 = Color3.fromRGB(0, 0, 0)
-	UserName.TextSize = 13.000
-	UserName.TextXAlignment = Enum.TextXAlignment.Left
-	UserName.ClipsDescendants = true
-
-	UserTag.Name = "UserTag"
-	UserTag.Parent = Userpad
-	UserTag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	UserTag.BackgroundTransparency = 1.000
-	UserTag.BorderSizePixel = 0
-	UserTag.Position = UDim2.new(0.230000004, 0, 0.455000013, 0)
-	UserTag.Size = UDim2.new(0, 95, 0, 17)
-	UserTag.Font = Enum.Font.Gotham
-	
-	UserTag.TextColor3 = Color3.fromRGB(0, 0, 0)
-	UserTag.TextSize = 13.000
-	UserTag.TextTransparency = 0.300
-	UserTag.TextXAlignment = Enum.TextXAlignment.Left
-
-	UserName.Text = user
-	UserTag.Text = "N/A"
-wait()
-
-    spawn(function()
-	while wait() do
-	UserTag.Text = ""..os.date("%H")..":"..os.date("%M")..":"..os.date("%S")
-	end
-	end)
-
-        ServersHoldFrame.Name = "ServersHoldFrame"
-	ServersHoldFrame.Parent =  MainHeader 
-	ServersHoldFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ServersHoldFrame.BackgroundTransparency = 1.000
-	ServersHoldFrame.BorderColor3 =  Color3.fromRGB(255, 255, 255)
-	ServersHoldFrame.Size = UDim2.new(0, 71, 0, 396)
-
-	ServersHold.Name = "ServersHold"
-	ServersHold.Parent = ServersHoldFrame
-	ServersHold.Active = true
-	ServersHold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ServersHold.BackgroundTransparency = 1.000
-	ServersHold.BorderSizePixel = 0
-	ServersHold.Position = UDim2.new(-0.000359333731, 0, 0.0580808073, 0)
-	ServersHold.Size = UDim2.new(0, 71, 0, 373)
-	ServersHold.ScrollBarThickness = 1
-	ServersHold.ScrollBarImageTransparency = 1
-	ServersHold.CanvasSize = UDim2.new(0, 0, 0, 0)
-
-	ServersHoldLayout.Name = "ServersHoldLayout"
-	ServersHoldLayout.Parent = ServersHold
-	ServersHoldLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	ServersHoldLayout.Padding = UDim.new(0, 7)
-
-	ServersHoldPadding.Name = "ServersHoldPadding"
-	ServersHoldPadding.Parent = ServersHold
+        
 
 
     title.Name = "title"
@@ -2278,29 +2146,6 @@ UICorner1.CornerRadius = UDim.new(0, 4)
                 end)()
             end
 
-function ChannelContent:AddImage(image)
-				local imagePlayer = "www.roblox.com/avatar-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
-				local gamepng = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432&format=png"
-				local img = gamepng or image
-				local ImageFrame = Instance.new("Frame")
-				local gameImageOutline = Instance.new("Frame")
-				local gameImage = Instance.new("ImageLabel")
-
-				ImageFrame.Name = "ImageFrame"
-				ImageFrame.Parent = ChannelHolder
-				ImageFrame.Position = UDim2.new(0.261979163, 0, 0.190789461, 0)
-				ImageFrame.Size = UDim2.new(0, 401, 0, 105)
-				ImageFrame.BackgroundTransparency = 1.000
-
-				gameImage.Name = "gameImageOutline"
-				gameImage.Parent = ImageFrame
-				gameImage.Size = UDim2.new(0, 401 * 2/4, 0, 125 * 3/4)
-				gameImage.Position = UDim2.new(0.125, 0, 0, 0)
-				gameImage.BackgroundTransparency = 1.000
-				gameImage.Image = img
-
-				ChannelHolder.CanvasSize = UDim2.new(0, 0, 0, ChannelHolderLayout.AbsoluteContentSize.Y)
-			end
 
             function Elements:ColorPicker(colText, colInf, defcolor, callback)
                 colText = colText or "ColorPicker"
