@@ -1,7 +1,3 @@
-if game.CoreGui:FindFirstChild("kavName") then
-    game.CoreGui:FindFirstChild("kavName"):Destroy()
-end
-
 local Kavo = {}
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
