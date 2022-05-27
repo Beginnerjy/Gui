@@ -1,5 +1,5 @@
-if game.CoreGui:FindFirstChild("KaVo") then
-    game.CoreGui:FindFirstChild("KaVo"):Destroy()
+if game.CoreGui:FindFirstChild("LibName") then
+    game.CoreGui:FindFirstChild("LibName"):Destroy()
 end
 
 local Kavo = {}
@@ -197,9 +197,7 @@ function Kavo.CreateLib(kavName, themeList)
             v:Destroy()
         end
     end
-    KaVo.Name = "KaVo"
-    KaVo.Parent = game.CoreGui
-    KaVo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
     
     local ScreenGui = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
