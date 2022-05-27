@@ -1,5 +1,5 @@
-if game.CoreGui:FindFirstChild("LibName") then
-    game.CoreGui:FindFirstChild("LibName"):Destroy()
+if game.CoreGui:FindFirstChild("Kavo") then
+    game.CoreGui:FindFirstChild("Kavo"):Destroy()
 end
 
 local Kavo = {}
