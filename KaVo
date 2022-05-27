@@ -838,7 +838,6 @@ function Kavo:Notification(titledesc, textdesc)
 
                 btn.MouseButton1Click:Connect(function()
                     if not focusing then
-                        callback()
                         local c = sample:Clone()
                         c.Parent = btn
                         local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
