@@ -1,5 +1,5 @@
-if game.CoreGui:FindFirstChild("ScreenGui") then
-    game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
+if game.CoreGui:FindFirstChild("kavName") then
+    game.CoreGui:FindFirstChild("kavName"):Destroy()
 end
 
 local Kavo = {}
