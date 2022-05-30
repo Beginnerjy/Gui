@@ -698,7 +698,7 @@ function Blacklib:Window()
                 UIStroke.Name = "UIStroke"
                 UIStroke.Parent = Button
                 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                UIStroke.Color = Color3.fromRGB(180,180,180)
+                UIStroke.Color = Color3.fromRGB(102,0,0)
                 UIStroke.LineJoinMode = Enum.LineJoinMode.Round
                 UIStroke.Thickness = 0.5
                 UIStroke.Transparency = 0
