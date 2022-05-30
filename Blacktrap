@@ -15,7 +15,7 @@ local Mouse = LocalPlayer:GetMouse()
 local NameID = LocalPlayer.Name
 
 
-_G.WindowBackgroundColor = Color3.fromRGB(12,12,12)
+_G.WindowBackgroundColor = Color3.fromRGB(51,51,51)
 _G.BackgroundItemColor = Color3.fromRGB(20, 20, 20)
 _G.TabWindowColor = Color3.fromRGB(30, 30, 30)
 _G.ContainerColor = Color3.fromRGB(30, 30, 30)
