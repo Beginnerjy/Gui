@@ -930,7 +930,7 @@ function Blacklib:Window()
                 
                 Frame.Name = "Frame"
                 Frame.Parent = DropSizeFrame
-                Frame.BackgroundColor3 = Color3.fromRGB(102,0,0)
+                Frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
                 Frame.BorderSizePixel = 0
                 Frame.Position = UDim2.new(0, 3, 0, 0)
                 Frame.Size = UDim2.new(0, 381, 0, 60)
@@ -1157,7 +1157,7 @@ function Blacklib:Window()
                         {Rotation = 180}
                         ):Play()
                     game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-                        {ImageColor3 = Color3.fromRGB(180,180,180)}
+                        {ImageColor3 = Color3.fromRGB(102,0,0)}
                         ):Play()
                 end
                 
