@@ -1868,7 +1868,7 @@ function Blacklib:Window()
                 Frame2.BackgroundColor3 = Color3.fromRGB(102,0,0)
                 Frame2.BorderSizePixel = 0
                 Frame2.Position = UDim2.new(0, 8, 0, 1)
-                Frame2.Size = UDim2.new(0, 371, 5, 1)
+                Frame2.Size = UDim2.new(0, 400, 0, 1)
             -- End Label --
             end
             return ItemHand
