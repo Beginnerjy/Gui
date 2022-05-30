@@ -103,9 +103,9 @@ function Blacklib:Window()
     BlackImage.Name = "BlackImage"
     BlackImage.Parent = WindowFrame
     BlackImage.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-    BlackImage.BackgroundTransparency = 1.000
+    BlackImage.BackgroundTransparency = 1
     BlackImage.Position = UDim2.new(0, 3, 0, 3)
-    BlackImage.Size = UDim2.new(0, 25, 0, 25)
+    BlackImage.Size = UDim2.new(0, 25, 0, 26)
     BlackImage.Image = "rbxassetid://9767297188"
     BlackImage.ImageColor3 = Color3.fromRGB(200,0,0)
     
