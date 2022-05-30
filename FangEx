@@ -1861,7 +1861,7 @@ function Blacklib:Window()
                 Frame.BackgroundColor3 = _G.BackgroundItemColor
                 Frame.BackgroundTransparency = 1.000
                 Frame.BorderSizePixel = 0
-                Frame.Size = UDim2.new(0, 387, 0, 2)
+                Frame.Size = UDim2.new(0, 387, 0, 5)
                 
                 Frame2.Name = "Line"
                 Frame2.Parent = sectionFrame
