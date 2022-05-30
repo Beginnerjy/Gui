@@ -77,7 +77,7 @@ function Blacklib:Window()
     WindowStroke.Name = "WindowStroke"
     WindowStroke.Parent = WindowFrame
     WindowStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    WindowStroke.Color = Color3.fromRGB(120,120,120)
+    WindowStroke.Color = Color3.fromRGB(102,0,0)
     WindowStroke.LineJoinMode = Enum.LineJoinMode.Round
     WindowStroke.Thickness = 1
     WindowStroke.Transparency = 0
@@ -401,7 +401,7 @@ function Blacklib:Window()
         NotifHolderUIStroke.Name = "NotifHolderUIStroke"
         NotifHolderUIStroke.Parent = NotificationFrame
         NotifHolderUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        NotifHolderUIStroke.Color = Color3.fromRGB(180,180,180)
+        NotifHolderUIStroke.Color = Color3.fromRGB(102,0,0)
         NotifHolderUIStroke.LineJoinMode = Enum.LineJoinMode.Round
         NotifHolderUIStroke.Thickness = 0.5
         NotifHolderUIStroke.Transparency = 0
@@ -1018,7 +1018,7 @@ function Blacklib:Window()
                 DropStrokeList.Name = "DropStrokeList"
                 DropStrokeList.Parent = DropTextList
                 DropStrokeList.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                DropStrokeList.Color = Color3.fromRGB(180,180,180)
+                DropStrokeList.Color = Color3.fromRGB(102,0,0)
                 DropStrokeList.LineJoinMode = Enum.LineJoinMode.Round
                 DropStrokeList.Thickness = 0.2
                 DropStrokeList.Transparency = 0
@@ -1048,7 +1048,7 @@ function Blacklib:Window()
                 DropItemStroke.Name = "DropItemStroke"
                 DropItemStroke.Parent = DropItemScroll
                 DropItemStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                DropItemStroke.Color = Color3.fromRGB(180,180,180)
+                DropItemStroke.Color = Color3.fromRGB(102,0,0)
                 DropItemStroke.LineJoinMode = Enum.LineJoinMode.Round
                 DropItemStroke.Thickness = 0
                 DropItemStroke.Transparency = 0
@@ -1259,7 +1259,7 @@ function Blacklib:Window()
                 UIStroke.Name = "UIStroke"
                 UIStroke.Parent = SliderFrame_2
                 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                UIStroke.Color = Color3.fromRGB(180,180,180)
+                UIStroke.Color = Color3.fromRGB(102,0,0)
                 UIStroke.LineJoinMode = Enum.LineJoinMode.Round
                 UIStroke.Thickness = 0.5
                 UIStroke.Transparency = 0
@@ -1353,7 +1353,7 @@ function Blacklib:Window()
                 SliderStroke.Name = "SliderStroke"
                 SliderStroke.Parent = BoxFrame
                 SliderStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                SliderStroke.Color = Color3.fromRGB(180,180,180)
+                SliderStroke.Color = Color3.fromRGB(102,0,0)
                 SliderStroke.LineJoinMode = Enum.LineJoinMode.Round
                 SliderStroke.Thickness = 1
                 SliderStroke.Transparency = 0.5
@@ -1596,7 +1596,7 @@ function Blacklib:Window()
                 
                 UIStroke2.Parent = BoxCover
                 UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                UIStroke2.Color = Color3.fromRGB(180,180,180)
+                UIStroke2.Color = Color3.fromRGB(102,0,0)
                 UIStroke2.LineJoinMode = Enum.LineJoinMode.Round
                 UIStroke2.Thickness = 0.5
                 UIStroke2.Transparency = 0
@@ -1661,7 +1661,7 @@ function Blacklib:Window()
             
                 UIStroke.Parent = TextBox
                 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                UIStroke.Color = Color3.fromRGB(180,180,180)
+                UIStroke.Color = Color3.fromRGB(102,0,0)
                 UIStroke.LineJoinMode = Enum.LineJoinMode.Round
                 UIStroke.Thickness = 1
                 UIStroke.Transparency = 0.5
@@ -1726,7 +1726,7 @@ function Blacklib:Window()
                 
                 UIStroke2.Parent = BindFrame_2
                 UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                UIStroke2.Color = Color3.fromRGB(180,180,180)
+                UIStroke2.Color = Color3.fromRGB(102,0,0)
                 UIStroke2.LineJoinMode = Enum.LineJoinMode.Round
                 UIStroke2.Thickness = 0.5
                 UIStroke2.Transparency = 0
@@ -1788,7 +1788,7 @@ function Blacklib:Window()
             
                 UIStroke.Parent = KeyBindButton
                 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                UIStroke.Color = Color3.fromRGB(180,180,180)
+                UIStroke.Color = Color3.fromRGB(102,0,0)
                 UIStroke.LineJoinMode = Enum.LineJoinMode.Round
                 UIStroke.Thickness = 0.5
                 UIStroke.Transparency = 0
