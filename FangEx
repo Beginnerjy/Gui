@@ -930,7 +930,7 @@ function Blacklib:Window()
                 
                 Frame.Name = "Frame"
                 Frame.Parent = DropSizeFrame
-                Frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+                Frame.BackgroundColor3 = Color3.fromRGB(102,0,0)
                 Frame.BorderSizePixel = 0
                 Frame.Position = UDim2.new(0, 3, 0, 0)
                 Frame.Size = UDim2.new(0, 381, 0, 60)
@@ -1861,14 +1861,14 @@ function Blacklib:Window()
                 Frame.BackgroundColor3 = _G.BackgroundItemColor
                 Frame.BackgroundTransparency = 1.000
                 Frame.BorderSizePixel = 0
-                Frame.Size = UDim2.new(0, 400, 0, 10)
+                Frame.Size = UDim2.new(0, 390, 0, 2)
                 
                 Frame2.Name = "Line"
                 Frame2.Parent = sectionFrame
                 Frame2.BackgroundColor3 = Color3.fromRGB(255,0,0)
                 Frame2.BorderSizePixel = 0
                 Frame2.Position = UDim2.new(0, 8, 0, 1)
-                Frame2.Size = UDim2.new(0, 400, 0, 10)
+                Frame2.Size = UDim2.new(0, 375, 0, 1)
             -- End Label --
             end
             return ItemHand
