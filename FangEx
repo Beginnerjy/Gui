@@ -1865,7 +1865,7 @@ function Blacklib:Window()
                 
                 Frame2.Name = "Line"
                 Frame2.Parent = sectionFrame
-                Frame2.BackgroundColor3 = Color3.fromRGB(200,200,200)
+                Frame2.BackgroundColor3 = Color3.fromRGB(102,0,0)
                 Frame2.BorderSizePixel = 0
                 Frame2.Position = UDim2.new(0, 8, 0, 1)
                 Frame2.Size = UDim2.new(0, 371, 0, 1)
