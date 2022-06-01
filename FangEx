@@ -106,7 +106,7 @@ function Blacklib:Window()
     BlackImage.BackgroundTransparency = 1
     BlackImage.Position = UDim2.new(0, 3, 0, 3)
     BlackImage.Size = UDim2.new(0, 25, 0, 26)
-    BlackImage.Image = "https://www.roblox.com/library/9767297188/Wolf"
+    BlackImage.Image = "rbxassetid://9767297188:"
     BlackImage.ImageColor3 = Color3.fromRGB(200,0,0)
     
     BlackTitle.Name = "BlackTitle"
@@ -129,7 +129,7 @@ function Blacklib:Window()
     Space.Size = UDim2.new(0, 10, 0, 25)
     Space.Font = Enum.Font.GothamBold
     Space.Text = "|"
-    Space.TextColor3 = Color3.fromRGB(0,150,0)
+    Space.TextColor3 = Color3.fromRGB(150,0,0)
     Space.TextSize = 18.000
     
     ServerTime.Name = "ServerTime"
@@ -152,7 +152,7 @@ function Blacklib:Window()
     Space2.Size = UDim2.new(0, 10, 0, 25)
     Space2.Font = Enum.Font.GothamBold
     Space2.Text = "|"
-    Space2.TextColor3 = Color3.fromRGB(0,150,0)
+    Space2.TextColor3 = Color3.fromRGB(150,0,0)
     Space2.TextSize = 18.000
     
     Pinged.Name = "Pinged"
@@ -175,7 +175,7 @@ function Blacklib:Window()
     CloseButton.Position = UDim2.new(0, 525, 0, 3)
     CloseButton.Size = UDim2.new(0, 25, 0, 25)
     CloseButton.Font = Enum.Font.Gotham
-    CloseButton.TextColor3 = Color3.fromRGB(0, 200, 0)
+    CloseButton.TextColor3 = Color3.fromRGB(150, 0, 0)
     CloseButton.Text = "×"
     CloseButton.Rotation = 0
     CloseButton.TextSize = 25.000
