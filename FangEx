@@ -754,12 +754,12 @@ function Blacklib:Window()
                     if callBackDebounce then
                         mouseleft = false
                         game.TweenService:Create(UIStroke, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),{
-                            Color = Color3.fromRGB(70,70,70)
+                            Color = Color3.fromRGB(70,0,0)
                         }):Play()
                     else
                         mouseleft = false
                         game.TweenService:Create(UIStroke, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),{
-                            Color = Color3.fromRGB(90,90,90)
+                            Color = Color3.fromRGB(90,0,0)
                         }):Play()
                     end
                 end)
@@ -771,7 +771,7 @@ function Blacklib:Window()
                             TextSize = 12
                         }):Play()
                         game.TweenService:Create(UIStroke, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),{
-                            Color = Color3.fromRGB(180,180,180)
+                            Color = Color3.fromRGB(102,0,0)
                         }):Play()
                     else
                         mouseleft = true
@@ -780,7 +780,7 @@ function Blacklib:Window()
                             TextSize = 12
                         }):Play()
                         game.TweenService:Create(UIStroke, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),{
-                            Color = Color3.fromRGB(180,180,180)
+                            Color = Color3.fromRGB(102,0,0)
                         }):Play()
                     end
                 end)
