@@ -1,0 +1,557 @@
+-- By YOUR NAME HERE
+
+local Fang = {}
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local NameID = LocalPlayer.Name
+local LocalizationService = game:GetService("LocalizationService")
+
+local Utility = {}
+local Objects = {}
+function Fang:DraggingEnabled(frame, parent)
+        
+    parent = parent or frame
+    
+    local dragging = false
+    local dragInput, mousePos, framePos
+
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            mousePos = input.Position
+            framePos = parent.Position
+            
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    frame.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+
+    input.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            local delta = input.Position - mousePos
+            parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
+        end
+    end)
+end
+
+function Utility:TweenObject(obj, properties, duration, ...)
+    tween:Create(obj, tweeninfo(duration, ...), properties):Play()
+end
+
+function Fang:Window()
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+local openmain = Instance.new("Frame")
+local open = Instance.new("TextButton")
+local Fang = Instance.new("ImageLabel")
+
+Fang.Name = "Fang"
+Fang.Parent = game.CoreGui
+Fang.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+--Properties:
+ScreenGui.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.new(0, 0, 0)
+main.Position = UDim2.new(0.0203577988, 0, 0.641277611, 0)
+main.Size = UDim2.new(0, 800, 0, 600)
+main.Visible = false
+main.Active = true
+main.Draggable = true
+
+WindowFrame.Name = "WindowFrame"
+    WindowFrame.Parent = Main
+    WindowFrame.BackgroundColor3 = _G.WindowBackgroundColor
+    WindowFrame.Position = UDim2.new(0, 220, 0, 30)
+    WindowFrame.BorderSizePixel = 0
+    WindowFrame.Size = UDim2.new(0, 550, 0, 0)
+    WindowFrame.ClipsDescendants = true
+    
+    WindowCorner.Name = "WindowCorner"
+    WindowCorner.Parent = WindowFrame
+    WindowCorner.CornerRadius = UDim.new(0, 7)
+    
+    WindowStroke.Name = "WindowStroke"
+    WindowStroke.Parent = WindowFrame
+    WindowStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+    WindowStroke.Color = Color3.fromRGB(102,0,0)
+    WindowStroke.LineJoinMode = Enum.LineJoinMode.Round
+    WindowStroke.Thickness = 1
+    WindowStroke.Transparency = 0
+    WindowStroke.Enabled = true
+    WindowStroke.Archivable = true
+
+FangTitle.Name = "FangTitle"
+FangTitle.Parent = WindowFrame
+FangTitle.BackgroundColor3 = _G.WindowBackgroundColor
+FangTitle.BackgroundTransparency = 1.000
+FangTitle.Position = UDim2.new(0, 33, 0, 3)
+FangTitle.Size = UDim2.new(0, 50, 0, 25)
+FangTitle.Font = Enum.Font.GothamBold
+FangTitle.Text = ""
+FangTitle.TextColor3 = Color3.fromRGB(180,180,180)
+FangTitle.TextSize = 13.000
+FangTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+close.Name = "close"
+    close.Parent = main
+    close.BackgroundTransparency = 1.000
+    close.Position = UDim2.new(0, 525, 0, 3)
+    close.Size = UDim2.new(0, 21, 0, 21)
+    close.ZIndex = 2
+    close.Image = "rbxassetid://3926305904"
+    close.ImageRectOffset = Vector2.new(284, 4)
+    close.ImageRectSize = Vector2.new(24, 24)
+    close.MouseButton1Click:Connect(function()
+        game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            ImageTransparency = 1
+        }):Play()
+        wait()
+        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0,0,0,0),
+			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+		}):Play()
+        wait(1)
+        ScreenGui:Destroy()
+    end)
+    
+    local LineWindow = Instance.new("Frame")
+    local SpaceWindow = Instance.new("Frame")
+    local TabWindow = Instance.new("ScrollingFrame")
+    local TabWindowList = Instance.new("UIListLayout")
+    local ContainerHold = Instance.new("Frame")
+    local ContainerItem = Instance.new("Folder")
+    local ContainerHoldCorner = Instance.new("UICorner")
+    
+    LineWindow.Name = "LineWindow"
+    LineWindow.Parent = WindowFrame
+    LineWindow.BackgroundColor3 = Color3.fromRGB(120,120,120)
+    LineWindow.BorderSizePixel = 0
+    LineWindow.Position = UDim2.new(0, 5, 0, 31)
+    LineWindow.Size = UDim2.new(0, 540, 0, 1)
+    
+    SpaceWindow.Name = "SpaceWindow"
+    SpaceWindow.Parent = WindowFrame
+    SpaceWindow.BackgroundColor3 = Color3.fromRGB(120,120,120)
+    SpaceWindow.BorderSizePixel = 0
+    SpaceWindow.Position = UDim2.new(0, 156, 0, 41)
+    SpaceWindow.Size = UDim2.new(0, 1, 0, 300)
+    
+    TabWindow.Name = "TabWindow"
+    TabWindow.Parent = WindowFrame
+    TabWindow.BackgroundColor3 = _G.TabWindowColor
+    TabWindow.BackgroundTransparency = 1.000
+    TabWindow.BorderSizePixel = 0
+    TabWindow.Position = UDim2.new(0, 3, 0, 40)
+    TabWindow.Size = UDim2.new(0, 150, 0, 0)
+    TabWindow.ScrollBarThickness = 0
+    TabWindow.ClipsDescendants = true
+    
+    TabWindow:TweenSize(UDim2.new(0, 150, 0, 275), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 10.0, true)
+    
+    TabWindowList.Name = "TabWindowList"
+    TabWindowList.Parent = TabWindow
+    TabWindowList.FillDirection = Enum.FillDirection.Vertical
+    TabWindowList.SortOrder = Enum.SortOrder.LayoutOrder
+    TabWindowList.Padding = UDim.new(0, 2)
+    TabWindowList.VerticalAlignment = Enum.VerticalAlignment.Top
+    
+    ContainerHold.Name = "ContainerHold"
+    ContainerHold.Parent = WindowFrame
+    ContainerHold.BackgroundColor3 = _G.ContainerColor
+    ContainerHold.BackgroundTransparency = 1.000
+    ContainerHold.BorderSizePixel = 0
+    ContainerHold.Position = UDim2.new(0, 160, 0, 40)
+    ContainerHold.Size = UDim2.new(0, 387, 0, 304)
+    
+    ContainerHoldCorner.Name = "ContainerHoldCorner"
+    ContainerHoldCorner.Parent = ContainerHold
+    ContainerHoldCorner.CornerRadius = UDim.new(0, 5)
+    
+    ContainerItem.Name = "ContainerItem"
+    ContainerItem.Parent = ContainerHold
+    
+    TabWindow.CanvasSize = UDim2.new(0, 0, 0, 0 + TabWindowList.AbsoluteContentSize.Y)
+    TabWindowList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        TabWindow.CanvasSize = UDim2.new(0, 0, 0, 0 + TabWindowList.AbsoluteContentSize.Y)
+    end)
+    
+    function osfunc:Refresh(textadd)
+        ServerTime.Text = textadd
+    end
+    function titlefunc:Refresh(text)
+        BlackTitle.Text = text
+    end
+    function pingfunc:Refresh(newtext)
+        Pinged.Text = newtext
+    end
+    function timefunc:Refresh(newtime)
+        PlayTime.Text = newtime
+    end
+    
+    local function UpdateTime()
+        local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+        local Day = math.floor(GameTime/(60^3))%24
+        local Hour = math.floor(GameTime/(60^2))%24
+        local Minute = math.floor(GameTime/(60^1))%60
+        local Second = math.floor(GameTime/(60^0))%60
+        
+        timefunc:Refresh("Timer = "..Day.."."..Hour.. "."..Minute.. "."..Second)
+    end
+    spawn(function()
+        while true do
+            UpdateTime()
+            game:GetService("RunService").RenderStepped:Wait()
+        end
+    end)
+    
+    spawn(function()
+        while game:GetService("RunService").RenderStepped:wait() do
+            pingfunc:Refresh(tostring(game:GetService("Stats").PerformanceStats.Memory:GetValueString()).." - "..tostring(game:GetService("Stats").PerformanceStats.NetworkReceived:GetValueString()).." - "..tostring(game:GetService("Stats").PerformanceStats.Ping:GetValueString()))
+        end
+    end)
+    
+    local function UpdateOS()
+        local date = os.date("*t")
+        local hour = (date.hour) % 24
+        local ampm = hour < 12 and "AM" or "PM"
+        local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
+        local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
+        osfunc:Refresh(datetime.." - "..timezone)
+    end
+    spawn(function()
+        while true do
+            UpdateOS()
+            game:GetService("RunService").RenderStepped:Wait()
+        end
+    end)
+    spawn(function()
+        while task.wait() do
+            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("F") wait(.2) titlefunc:Refresh("Fa") wait(.2) titlefunc:Refresh("Fan") wait(.2) titlefunc:Refresh("Fang") wait(.2) titlefunc:Refresh("FangH") wait(.2) titlefunc:Refresh("FangHu") wait(.2) titlefunc:Refresh("FangHub") wait(.2) titlefunc:Refresh("FangHub") wait(.9) titlefunc:Refresh("FangHu") wait(.2) titlefunc:Refresh("FangH") wait(.2) titlefunc:Refresh("Fang") wait(.2) titlefunc:Refresh("Fan") wait(.2) titlefunc:Refresh("Fa") wait(.2) titlefunc:Refresh("F") wait(.2) titlefunc:Refresh("")
+        end
+    end)
+    
+    function Fang:Notification(titledesc, textdesc)
+        local NotificationHold = Instance.new("TextButton")
+        local NotificationFrame = Instance.new("Frame")
+        local OkayBtn = Instance.new("TextButton")
+        local OkayBtnCorner = Instance.new("UICorner")
+        local OkayBtnTitle = Instance.new("TextLabel")
+        local NotificationTitle = Instance.new("TextLabel")
+        local NotificationDesc = Instance.new("TextLabel")
+        local NotifCorner = Instance.new("UICorner")
+        local NotifHolderUIStroke = Instance.new("UIStroke")
+        local Line = Instance.new("Frame")
+        
+        -- Prop --
+        NotificationHold.Name = "NotificationHold"
+        NotificationHold.Parent = WindowFrame
+        NotificationHold.BackgroundColor3 = _G.WindowBackgroundColor
+        NotificationHold.BackgroundTransparency = 0.4
+        NotificationHold.BorderSizePixel = 0
+        NotificationHold.Size = UDim2.new(0, 550, 0, 350)
+        NotificationHold.AutoButtonColor = false
+        NotificationHold.Font = Enum.Font.SourceSans
+        NotificationHold.Text = ""
+        NotificationHold.TextColor3 = Color3.fromRGB(180,180,180)
+        NotificationHold.TextSize = 13.000
+        
+        TweenService:Create(NotificationHold, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 0.4}):Play()
+        wait(0.4)
+        
+        NotificationFrame.Name = "NotificationFrame"
+        NotificationFrame.Parent = NotificationHold
+        NotificationFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+        NotificationFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+        NotificationFrame.BorderColor3 = Color3.fromRGB(102,0,0)
+        NotificationFrame.BorderSizePixel = 0
+        NotificationFrame.ClipsDescendants = true
+        NotificationFrame.Position = UDim2.new(0, 275, 0, 175)
+        NotificationFrame.Size = UDim2.new(0, 0, 0, 0)		
+ 
+        NotificationFrame:TweenSize(UDim2.new(0, 400, 0, 250), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+        
+        NotifCorner.Name = "NotifCorner"
+        NotifCorner.Parent = NotificationFrame
+        NotifCorner.CornerRadius = UDim.new(0, 5)
+        
+        NotifHolderUIStroke.Name = "NotifHolderUIStroke"
+        NotifHolderUIStroke.Parent = NotificationFrame
+        NotifHolderUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        NotifHolderUIStroke.Color = Color3.fromRGB(102,0,0)
+        NotifHolderUIStroke.LineJoinMode = Enum.LineJoinMode.Round
+        NotifHolderUIStroke.Thickness = 0.5
+        NotifHolderUIStroke.Transparency = 0
+        NotifHolderUIStroke.Enabled = true
+        NotifHolderUIStroke.Archivable = true
+        
+        OkayBtn.Name = "OkayBtn"
+        OkayBtn.Parent = NotificationFrame
+        OkayBtn.BackgroundColor3 = Color3.fromRGB(190, 190, 190)
+        OkayBtn.BorderSizePixel = 1
+        OkayBtn.BorderColor3 = _G.SectionColor
+        OkayBtn.Position = UDim2.new(0, 125, 0, 190)
+        OkayBtn.Size = UDim2.new(0, 150, 0, 30)
+        OkayBtn.AutoButtonColor = true
+        OkayBtn.Font = Enum.Font.Code
+        OkayBtn.Text = ""
+        OkayBtn.TextColor3 = _G.SectionTextColor
+        OkayBtn.TextSize = 13.000
+        
+        OkayBtnCorner.CornerRadius = UDim.new(0, 5)
+        OkayBtnCorner.Name = "OkayBtnCorner"
+        OkayBtnCorner.Parent = OkayBtn
+        
+        OkayBtnTitle.Name = "OkayBtnTitle"
+        OkayBtnTitle.Parent = OkayBtn
+        OkayBtnTitle.BackgroundColor3 = _G.SectionColor
+        OkayBtnTitle.BackgroundTransparency = 1.000
+        OkayBtnTitle.Size = UDim2.new(0, 150, 0, 30)
+        OkayBtnTitle.Text = "OK"
+        OkayBtnTitle.Font = Enum.Font.Code
+        OkayBtnTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
+        OkayBtnTitle.TextSize = 22.000
+        
+        NotificationTitle.Name = "NotificationTitle"
+        NotificationTitle.Parent = NotificationFrame
+        NotificationTitle.BackgroundColor3 = Color3.fromRGB(46,44,44)
+        NotificationTitle.BackgroundTransparency = 1.000
+        NotificationTitle.Position = UDim2.new(0, 0, 0, 10)
+        NotificationTitle.Size = UDim2.new(0, 400, 0, 25)
+        NotificationTitle.ZIndex = 3
+        NotificationTitle.Font = Enum.Font.Code
+        NotificationTitle.Text = titledesc or "Notification"
+        NotificationTitle.TextColor3 = Color3.fromRGB(180,180,180)
+        NotificationTitle.TextSize = 20.000
+        
+        Line.Name = "Line"
+        Line.Parent = NotificationFrame
+        Line.BackgroundColor3 = Color3.fromRGB(180,180,180)
+        Line.BorderSizePixel = 0
+        Line.Position = UDim2.new(0, 5, 0, 43)
+        Line.Size = UDim2.new(0, 390, 0, 1)
+        
+        NotificationDesc.Name = "NotificationDesc"
+        NotificationDesc.Parent = NotificationFrame
+        NotificationDesc.BackgroundColor3 = Color3.fromRGB(47,43,43)
+        NotificationDesc.BackgroundTransparency = 1.000
+        NotificationDesc.Position = UDim2.new(0, 10, 0, 70)
+        NotificationDesc.Size = UDim2.new(0, 380, 0, 100)
+        NotificationDesc.Font = Enum.Font.Code
+        NotificationDesc.Text = textdesc
+        NotificationDesc.TextColor3 = Color3.fromRGB(180,180,180)
+        NotificationDesc.TextSize = 16.000
+        NotificationDesc.TextWrapped = true
+        NotificationDesc.TextXAlignment = Enum.TextXAlignment.Center
+        NotificationDesc.TextYAlignment = Enum.TextYAlignment.Top
+        
+        -- Notification Script--
+        OkayBtn.MouseEnter:Connect(function()
+            TweenService:Create(OkayBtn, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(30, 30, 30)}):Play()
+        end)
+ 
+        OkayBtn.MouseLeave:Connect(function()
+            TweenService:Create(OkayBtn, TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(25, 25, 25)}):Play()
+        end)
+        
+        OkayBtn.MouseButton1Click:Connect(function()
+            NotificationFrame:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+ 
+            wait(0.4)
+ 
+            TweenService:Create(NotificationHold, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
+ 
+            wait(.3)
+ 
+            NotificationHold:Destroy()
+        end)
+    end
+    
+    coroutine.wrap(function()
+        while wait() do
+        end
+    end)()
+    
+    local Tabs = {}
+    function Tabs:Tab(tabtitle, img)
+        local TabFrame = Instance.new("TextButton")
+        local TabCorner = Instance.new("UICorner")
+        local TabTitle = Instance.new("TextLabel")
+        local TabImage = Instance.new("ImageLabel")
+        
+        -- Prop --
+        TabFrame.Name = tabtitle or "TabFrame"
+        TabFrame.Parent = TabWindow
+        TabFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+        TabFrame.BackgroundTransparency = 0
+        TabFrame.BorderSizePixel = 0
+        TabFrame.AutoButtonColor = false
+        TabFrame.Size = UDim2.new(0, 150, 0, 30)
+        TabFrame.Font = Enum.Font.Code
+        TabFrame.Text = ""
+        TabFrame.TextColor3 = Color3.fromRGB(180,180,180)
+        TabFrame.TextSize = 15.000
+        
+        TabCorner.Name = tabtitle or "TabCorner"
+        TabCorner.Parent = TabFrame
+        TabCorner.CornerRadius = UDim.new(0, 5)
+        
+        TabImage.Name = tabtitle or "TabImage"
+        TabImage.Parent = TabFrame
+        TabImage.BackgroundColor3 = _G.TabWindowColor
+        TabImage.BackgroundTransparency = 1.000
+        TabImage.Position = UDim2.new(0, 3, 0, 4)
+        TabImage.Size = UDim2.new(0, 20, 0, 20)
+        TabImage.Image = img or "rbxassetid://8666601749" or "rbxassetid://9151401698"
+        TabImage.ImageColor3 = Color3.fromRGB(200,200,200)
+        
+        TabTitle.Name = tabtitle or "TabTitle"
+        TabTitle.Parent = TabFrame
+        TabTitle.BackgroundColor3 = _G.TabWindowColor
+        TabTitle.BackgroundTransparency = 1.000
+        TabTitle.BorderSizePixel = 0
+        TabTitle.Position = UDim2.new(0, 30, 0, 2.5)
+        TabTitle.Size = UDim2.new(0, 150, 0, 25)
+        TabTitle.Font = Enum.Font.Code
+        TabTitle.Text = tabtitle or "Put Tab Title"
+        TabTitle.TextColor3 = Color3.fromRGB(180,180,180)
+        TabTitle.TextSize = 13.000
+        TabTitle.TextXAlignment = Enum.TextXAlignment.Left
+        
+        -- Container --
+        local Container = Instance.new("ScrollingFrame")
+        local ContainerLayout = Instance.new("UIListLayout")
+        
+        -- Prop --
+        Container.Name = "Container"
+        Container.Parent = ContainerItem
+        Container.Active = true
+        Container.AnchorPoint = Vector2.new(0, 0)
+        Container.BackgroundColor3 = _G.ContainerColor
+        Container.BackgroundTransparency = 1.000
+        Container.Position = UDim2.new(0, 0, 0, 0)
+        Container.Size = UDim2.new(0, 387, 0, 0)
+        Container.ScrollBarThickness = 0
+        Container.Visible = true
+        
+        ContainerLayout.Name = "ContainerLayout"
+        ContainerLayout.Parent = Container
+        ContainerLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        ContainerLayout.Padding = UDim.new(0, 10)
+        
+        local function UpdateSize()
+            local cLt = ContainerLayout.AbsoluteContentSize
+
+            game.TweenService:Create(Container, TweenInfo.new(.3, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+                CanvasSize = UDim2.new(0, 0, 0, cLt.Y)
+            }):Play()
+        end
+        UpdateSize()
+        Container.ChildAdded:Connect(UpdateSize)
+        Container.ChildRemoved:Connect(UpdateSize)
+        TabFrame.MouseButton1Click:Connect(function()
+            for i,v in next, TabWindow:GetChildren() do
+                if v:IsA('TextButton') then
+                    game.TweenService:Create(v, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+                        {BackgroundColor3 = Color3.fromRGB(30,30,30)}
+                        ):Play()
+                    game.TweenService:Create(v, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+                        {BackgroundTransparency = 0}
+                        ):Play()
+                    UpdateSize()
+                end
+            end
+            game.TweenService:Create(TabFrame, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), 
+                {BackgroundColor3 = Color3.fromRGB(0,0,0)}
+                ):Play()
+            game.TweenService:Create(TabFrame, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+                {BackgroundTransparency = 0.9}
+                ):Play()
+            
+            for i,v in next, ContainerItem:GetChildren() do
+                v:TweenSize(UDim2.new(0, 387, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .3, true)
+                UpdateSize()
+            end
+            wait(0.1)
+            Container:TweenSize(UDim2.new(0, 387, 0, 304), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .3, true)
+            UpdateSize()
+            
+        end)
+        
+        local Section = {}
+        function Section:NewSection(seclabel)
+            local sectionFrame = Instance.new("Frame")
+            local UICorner = Instance.new("UICorner")
+            local sectionListLayout = Instance.new("UIListLayout")
+            local sectionFrameHead = Instance.new("Frame")
+            local UICorner_2 = Instance.new("UICorner")
+            local sectionCircle = Instance.new("Frame")
+            local UICorner_3 = Instance.new("UICorner")
+            local TextLabel = Instance.new("TextLabel")
+            local closeSection = Instance.new("TextButton")
+            
+            -- Prop --
+            sectionFrame.Name = seclabel or "sectionFrame"
+            sectionFrame.Parent = Container
+            sectionFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+            sectionFrame.BackgroundTransparency = 1.000
+            sectionFrame.Position = UDim2.new(0, 0, 0, 0)
+            sectionFrame.Size = UDim2.new(0, 387, 0, 25)
+            sectionFrame.ClipsDescendants = true
+
+            UICorner.Parent = sectionFrame
+            UICorner.CornerRadius = UDim.new(0, 5)
+
+            sectionListLayout.Parent = sectionFrame
+            sectionListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+            sectionListLayout.Padding = UDim.new(0, 7)
+            sectionListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+
+            sectionFrameHead.Name = seclabel or "sectionFrameHead"
+            sectionFrameHead.Parent = sectionFrame
+            sectionFrameHead.BackgroundColor3 = Color3.fromRGB(30,30,30)
+            sectionFrameHead.BackgroundTransparency = 1.000
+            sectionFrameHead.Position = UDim2.new(0, 0, 0, 0)
+            sectionFrameHead.Size = UDim2.new(0, 387, 0, 25)
+
+            UICorner_2.Parent = sectionFrameHead
+            UICorner_2.CornerRadius = UDim.new(0, 5)
+            
+            TextLabel.Name = seclabel or "TextLabel"
+            TextLabel.Parent = sectionFrameHead
+            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            TextLabel.BackgroundTransparency = 1.000
+            TextLabel.Position = UDim2.new(0, 0, 0, 0)
+            TextLabel.Size = UDim2.new(0, 387, 0, 25)
+            TextLabel.Font = Enum.Font.Code
+            TextLabel.Text = seclabel
+            TextLabel.TextColor3 = Color3.fromRGB(255,255,255)
+            TextLabel.TextSize = 13.000
+            TextLabel.TextXAlignment = Enum.TextXAlignment.Center
+            
+            sectionFrame.Size = UDim2.new(0, 387, 0, 5 + sectionListLayout.AbsoluteContentSize.Y + sectionListLayout.Padding.Offset)
+            
+            sectionListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+                sectionFrame.Size = UDim2.new(0, 387, 0, 5 + sectionListLayout.AbsoluteContentSize.Y + sectionListLayout.Padding.Offset)
+                UpdateSize()
+            end)
+            end
+end
+end
+
