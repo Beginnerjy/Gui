@@ -76,8 +76,8 @@ main.Active = true
 main.Draggable = true
 
 WindowFrame.Name = "WindowFrame"
-    WindowFrame.Parent = Main
-    WindowFrame.BackgroundColor3 = _G.WindowBackgroundColor
+    WindowFrame.Parent = main
+    WindowFrame.BackgroundColor3 = Color3.fromRGB(47,44,44)
     WindowFrame.Position = UDim2.new(0, 220, 0, 30)
     WindowFrame.BorderSizePixel = 0
     WindowFrame.Size = UDim2.new(0, 550, 0, 0)
