@@ -51,6 +51,9 @@ end
 
 function Fang:Window()
 local ScreenGui = Instance.new("ScreenGui")
+local WindowFrame = Instance.new("Frame")
+    local WindowCorner = Instance.new("UICorner")
+    local WindowStroke = Instance.new("UIStroke")
 local main = Instance.new("Frame")
 local title = Instance.new("TextLabel")
 local close = Instance.new("TextButton")
